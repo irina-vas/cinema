@@ -15,9 +15,9 @@ function Modal({ modalOpen, modalClose }) {
   if(!modalOpen) return null
   let seats = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
   let row1 = seats.slice(0,5);
-  let row2 = seats.slice(6,11);
-  let row3 = seats.slice(11,16);
-  let row4 = seats.slice(16)
+  let row2 = seats.slice(5,10);
+  let row3 = seats.slice(10,15);
+  let row4 = seats.slice(15)
 
   return ReactDom.createPortal(
     
@@ -32,35 +32,37 @@ function Modal({ modalOpen, modalClose }) {
         <div className="modal_seats">
           {row1.map((item, index) => {
             return (
-              <div className="modal_seats_row1">{item}</div> 
+              <button className="modal_seats_row" key={index}>{item}</button> 
             )
           })}
         </div>
         <div className="modal_seats">
           {row2.map((item, index) => {
             return (
-              <div className="modal_seats_row1">{item}</div> 
+              <button className="modal_seats_row" key={index}>{item}</button> 
             )
           })}
         </div>
         <div className="modal_seats">
           {row3.map((item, index) => {
             return (
-              <div className="modal_seats_row1">{item}</div> 
+              <button className="modal_seats_row" key={index}>{item}</button> 
             )
           })}
         </div>
         <div className="modal_seats">
           {row4.map((item, index) => {
             return (
-              <div className="modal_seats_row1">{item}</div> 
+              <button className="modal_seats_row" key={index}>{item}</button> 
             )
           })}
         </div>
-        <button onClick={modalClose} className="modal_closeBtn"></button>
+        <div className="btn_wrapper">
+          <button onClick={modalClose} className="modal_closeBtn">ЗАКРЫТЬ</button>
+          <button className="modal_submitBtn">КУПИТЬ</button>
+          </div>
       </div>
-      
-      MODAL MODAL MODAL MODAL MODAL MODAL
+
     </div>,
     document.querySelector('.portal')
   )
