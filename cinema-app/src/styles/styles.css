@@ -93,10 +93,95 @@ iframe {
 
 /* SHEDULE */
 
-.wrapper_schedule {
+.schedule_wrapper {
   color: #fff;
+  width: 90%
 }
 
 .schedule_poster > img {
   width: 50px;
+}
+
+.buyTicket {
+  display: block;
+  width: 4vw;
+  height: 1.5vw
+}
+
+.schedule_container {
+  display: flex;
+  justify-content: space-between;
+}
+
+::-webkit-datetime-edit { padding: 1em; }
+::-webkit-datetime-edit-fields-wrapper { background: silver; }
+::-webkit-datetime-edit-text { color: red; padding: 0 0.3em; }
+::-webkit-datetime-edit-month-field { color: blue; }
+::-webkit-datetime-edit-day-field { color: green; }
+::-webkit-datetime-edit-year-field { color: purple; }
+::-webkit-inner-spin-button { display: none; }
+::-webkit-calendar-picker-indicator { background: orange; }
+
+/* MODAL */
+
+.modal_wrapper {
+  color: #fff;
+  width: 200px;
+  height: 200px;
+  background-color: rgba(238, 235, 235, 0.5);
+
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+}
+
+.modal_main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 60vw;
+  height: 60vw;
+  background-color: black;
+  border-radius: 10px;
+}
+
+.modal_headline {
+  display: flex;
+  justify-content: space-around;
+}
+
+.empty, .chosen, .occupited {
+  width: 1.3vw;
+  height: 1.3vw;
+  display: inline-block;
+}
+
+.empty {
+  background-color: #273B7B;
+}
+
+.chosen {
+  background-color: #2B9D4B;
+}
+
+.occupited {
+  background-color: #686C78;
+}
+
+.modal_seats_row1 {
+  width: 3vw;
+  height: 3vw;
+  background-color: #273B7B;
+  text-align: center;
+  line-height: 3vw;
+}
+
+
+.modal_seats {
+  display: flex;
+  margin: 20px auto;
+  width: 300px;
+  justify-content: space-around;
 }
