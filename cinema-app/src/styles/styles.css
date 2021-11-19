@@ -1,0 +1,91 @@
+img {
+  width: 100%;
+  display: block;
+}
+
+.wrapper_movies {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.moviesOnScreen_cards {
+  width: 400px;
+  margin: 3vw;
+  border-radius: 5px;
+  background-color: rgba(49, 43, 43, 0.863);
+}
+
+.movie_poster > img {
+  width: 100%;
+  display: block;
+  height: 550px;
+  border-radius: 5px;
+}
+
+.movie_poster {
+  background-color: #000;
+}
+
+.search_movies_input {
+  width: 60vw;
+  padding: 1vw;
+  border-radius: 10px;
+  border: none;
+  opacity: 0.5;
+}
+
+.movie_title {
+  color: #fff;
+  padding: 20px 0;
+  font-size: 20px;
+
+}
+
+
+/* HEADER */
+
+
+.user_info, h2 {
+  color: #fff;
+}
+
+.wrapper_header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* NAV */
+
+.nav_item {
+  color: #fff;
+  list-style-type: none;
+  display: block;
+}
+
+
+/* MovieDetails */
+.wrapper_movie_details {
+  position: absolute;
+  top: 2%;
+  left: 30%
+}
+
+.movie_description {
+  color: #fff;
+}
+
+.movie_poster_details > img {
+  width: 500px;
+  margin: 0 auto;
+}
+.movie_iframe {
+  width: 600px;
+  margin: 40px auto;
+}
+
+iframe {
+  width: 100%;
+}
