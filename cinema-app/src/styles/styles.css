@@ -89,3 +89,14 @@ img {
 iframe {
   width: 100%;
 }
+
+
+/* SHEDULE */
+
+.wrapper_schedule {
+  color: #fff;
+}
+
+.schedule_poster > img {
+  width: 50px;
+}

@@ -9,7 +9,9 @@ function Nav() {
       <li className="nav_item">
         <Link to="/movies">HOME</Link>
       </li>
-      <li className="nav_item">SCHEDULE</li>
+      <li className="nav_item">
+        <Link to="/schedule">SCHEDULE</Link>
+      </li>
       </ul>
     </div>
   );
