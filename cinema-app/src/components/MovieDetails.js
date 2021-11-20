@@ -1,13 +1,12 @@
 import React from 'react';
 import '../styles/styles.css';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
 function MovieDetails() {
-  const dispatch = useDispatch();
   const movies = useSelector(state => state.movies);
   const schedule = useSelector(state => state.schedule);
-
+  const{ title } = useParams();
   let scheduleId = [];
   let moviesOnScreen = [];
 
@@ -15,22 +14,17 @@ function MovieDetails() {
     if (scheduleId.includes(item.movie.id)) {
         continue;
     } else {
-      scheduleId .push(item.movie.id)
+      scheduleId.push(item.movie.id)
     }
   }
 
   for (let item of movies) {
-    if (scheduleId .includes(item.id)) {
+    if (scheduleId.includes(item.id)) {
       moviesOnScreen.push(item)
     }
   }
 
-  
-  console.log(moviesOnScreen)
 
-  const{ title } = useParams();
-
-  console.log(title)
   return (
       <div className="wrapper_movie_details">
       {moviesOnScreen.filter(item => item.title === title).map(item => {
