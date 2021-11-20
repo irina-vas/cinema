@@ -1,19 +1,31 @@
+/* MAIN CONTENET */
+
 img {
   width: 100%;
   display: block;
+}
+
+.container_main {
+  position: relative;
+  width: 85%;
+  box-shadow: 4px 4px 45px -21px rgba(129, 130, 131, 0.2);
 }
 
 .wrapper_movies {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  margin-top: 100px;
 }
 
 .moviesOnScreen_cards {
-  width: 400px;
   margin: 3vw;
   border-radius: 5px;
   background-color: rgba(49, 43, 43, 0.863);
+}
+
+.moviesOnScreen_cards:hover {
+  box-shadow: 4px 4px 45px 25px rgba(129, 130, 131, 0.2);
 }
 
 .movie_poster > img {
@@ -27,44 +39,103 @@ img {
   background-color: #000;
 }
 
-.search_movies_input {
-  width: 60vw;
-  padding: 1vw;
-  border-radius: 10px;
-  border: none;
+#main_input {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
   opacity: 0.5;
+  margin: 0 auto;
+  display: flex;
+  text-align: center;
+}
+
+.search_movies_input {
+  width: 50vw;
+  padding: 1vw;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border: none;
+}
+
+.select_genre {
+  border: none;
+  outline: none;
 }
 
 .movie_title {
   color: #fff;
   padding: 20px 0;
   font-size: 20px;
-
+  text-align: center;
 }
 
-
 /* HEADER */
-
 
 .user_info, h2 {
   color: #fff;
 }
 
+.user_info {
+  display: flex;
+}
+
+.cinema_icon {
+  width: 130px;
+}
+
+.cinema_icon_reel {
+  width: 600px;
+}
+
 .wrapper_header {
   display: flex;
-  width: 100%;
   justify-content: space-between;
   align-items: center;
+  background-color: rgba(29,28,33,0.4);
+  padding: 40px;
+}
+
+.user_icon {
+  width: 40px;
+}
+
+.user_info > p {
+  color: #777780;
+  margin-right: 20px;
 }
 
 /* NAV */
+.wrapper_nav {
+  background-color: rgba(29,28,33,0.4);
+  width: 15%;
+  min-height: 100vh;
+}
+
+.wrapper_nav > nav {
+  display: flex;
+  flex-direction: column;
+  padding-right: 0px;
+}
 
 .nav_item {
   color: #fff;
   list-style-type: none;
   display: block;
+  margin-top: 30px;
+  font-weight: 500;
 }
 
+.nav_item > a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+}
+
+.active {
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: #FFF 0px 0px 10px, #FFF 0px 0px 15px, #FF2D95 0px 0px 75px, 2px 2px 2px rgba(206,200,192,0);
+}
 
 /* MovieDetails */
 .wrapper_movie_details {
@@ -81,8 +152,13 @@ img {
   width: 500px;
   margin: 0 auto;
 }
+
+.name {
+  text-align: center;
+}
+
 .movie_iframe {
-  width: 600px;
+  width: 500px;
   margin: 40px auto;
 }
 
@@ -94,57 +170,90 @@ iframe {
 /* SHEDULE */
 
 .schedule_wrapper {
-  color: #fff;
-  width: 90%
+  color: #ffffff;
+  width: 70vw;
+  margin: 0 auto;
 }
 
-.schedule_poster > img {
-  width: 50px;
+.schedule_wrapper .schedule_image {
+  width: 400px;
+  position: absolute;
+  left: 38%
 }
 
-.buyTicket {
+.schedule_poster{
+  width: 70px;
   display: block;
-  width: 4vw;
-  height: 1.5vw
+}
+
+.buyBtn {
+  display: block;
+  width: 130px;
+  height: 50px;
+  background-color: #0096d5;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.buyBtn:hover {
+  background-color: #fff;
+  color: #0096d5;;
 }
 
 .schedule_container {
   display: flex;
   justify-content: space-between;
+  margin: 20px 0;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #0096d5;
 }
 
-::-webkit-datetime-edit { padding: 1em; }
-::-webkit-datetime-edit-fields-wrapper { background: silver; }
-::-webkit-datetime-edit-text { color: red; padding: 0 0.3em; }
-::-webkit-datetime-edit-month-field { color: blue; }
-::-webkit-datetime-edit-day-field { color: green; }
-::-webkit-datetime-edit-year-field { color: purple; }
-::-webkit-inner-spin-button { display: none; }
-::-webkit-calendar-picker-indicator { background: orange; }
+.schedule_desc {
+  display: flex;
+  width: 30vw;
+  justify-content: space-between;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.schedule_movie_wrapper {
+  margin-top: 270px;
+  width: 100%;
+}
+
+input[type="date"] {
+  background-color: #0095d5;
+  padding: 25px;
+  position: absolute;
+  left: 50%;
+  top: 8%;
+  transform: translate(-50%);
+  color: #fff;
+  font-size: 16.5px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+}
+
+::-webkit-calendar-picker-indicator {
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+}
 
 /* MODAL */
 
 .modal_wrapper {
   color: #fff;
-  width: 200px;
-  height: 200px;
   background-color: rgba(238, 235, 235, 0.5);
-
   position: absolute;
   width: 100vw;
   height: 100vh;
   z-index: 100;
-}
-
-.modal_main {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  width: 40vw;
-  height: 40vw;
-  background-color: black;
-  border-radius: 10px;
 }
 
 .modal_headline {
@@ -152,6 +261,32 @@ iframe {
   justify-content: space-around;
 }
 
+.modal_main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 400px;
+  height: 500px;
+  background-color: rgba(29,28,33);
+  border-radius: 10px;
+}
+
+.modal_second {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 400px;
+  height: 500px;
+  background-color: rgba(29,28,33);
+  border-radius: 10px;
+  z-index: 101;
+}
+
+button[chosen] {
+  background-color: #2B9D4B;
+}
 .empty, .chosen, .occupited {
   width: 1.3vw;
   height: 1.3vw;
@@ -170,9 +305,17 @@ iframe {
   background-color: #686C78;
 }
 
+.modal_seats {
+  display: flex;
+  margin: 20px auto;
+  width: 300px;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
 .modal_seats_row {
-  width: 50px;
-  height: 53px;
+  width: 40px;
+  height: 43px;
   background-color: #273B7B;
   text-align: center;
   line-height: 55px;
@@ -182,17 +325,6 @@ iframe {
   margin: 10px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px
-}
-
-.modal_seats_row:focus {
-  background-color: #2B9D4B;
-}
-
-.modal_seats {
-  display: flex;
-  margin: 20px auto;
-  width: 300px;
-  justify-content: space-around;
 }
 
 .btn_wrapper {
@@ -208,4 +340,17 @@ iframe {
   height: 20px;
   border: none;
   margin: 10px;
+}
+
+/* MODAL SECOND */
+
+.modal_second {
+  position: fixed;
+}
+
+.close_icon {
+  position: absolute;
+  width: 20px;
+  top: 3%;
+  left: 90%;
 }
