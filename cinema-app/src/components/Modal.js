@@ -1,10 +1,16 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../styles/styles.css';
 import ReactDom from 'react-dom';
+import ModalSecond from './ModalSecond';
 
 
+function Modal({ modalOpen, modalClose, modalSecond,  setModalSecond, modalSecClose }) {
 
-function Modal({ modalOpen, modalClose }) {
+  let seats = [];
+  for (let i = 1; i < 21; i++) {
+    seats.push(i)
+  }
+
   useEffect(() => {
     let modal = document.createElement('div');
     modal.classList.add('portal');
@@ -13,59 +19,34 @@ function Modal({ modalOpen, modalClose }) {
 
 
   if(!modalOpen) return null
-  let seats = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
-  let row1 = seats.slice(0,5);
-  let row2 = seats.slice(5,10);
-  let row3 = seats.slice(10,15);
-  let row4 = seats.slice(15)
 
   return ReactDom.createPortal(
     
-    <div className="modal_wrapper">
-      
+    <div className="modal_wrapper">   
       <div className="modal_main">
       <div className="modal_headline">
-        <p>свобоно <div className="empty"></div></p>
-        <p>выбранно <div className="chosen"></div></p>
-        <p>занято <div className="occupited"></div></p>
+        <p>свобоно <span className="empty"></span></p>
+        <p>выбранно <span className="chosen"></span></p>
+        <p>занято <span className="occupited"></span></p>
       </div>
         <div className="modal_seats">
-          {row1.map((item, index) => {
+          {seats.map((item, index) => {
             return (
-              <button className="modal_seats_row" key={index}>{item}</button> 
+              <button onClick={(e) => e.currentTarget.setAttribute('chosen','chosen')} className="modal_seats_row" key={index}>{item}</button> 
             )
           })}
         </div>
-        <div className="modal_seats">
-          {row2.map((item, index) => {
-            return (
-              <button className="modal_seats_row" key={index}>{item}</button> 
-            )
-          })}
-        </div>
-        <div className="modal_seats">
-          {row3.map((item, index) => {
-            return (
-              <button className="modal_seats_row" key={index}>{item}</button> 
-            )
-          })}
-        </div>
-        <div className="modal_seats">
-          {row4.map((item, index) => {
-            return (
-              <button className="modal_seats_row" key={index}>{item}</button> 
-            )
-          })}
-        </div>
+        {modalSecond ? <ModalSecond modalSecClose={modalSecClose}/> : null}
+        
         <div className="btn_wrapper">
           <button onClick={modalClose} className="modal_closeBtn">ЗАКРЫТЬ</button>
-          <button className="modal_submitBtn">КУПИТЬ</button>
+          <button className="modal_submitBtn" onClick={() => setModalSecond(true)}>КУПИТЬ</button>
           </div>
-      </div>
-
-    </div>,
+        </div>
+       </div>,
     document.querySelector('.portal')
   )
 }
 
 export default Modal;
+
