@@ -7,6 +7,7 @@ import Footer from './Footer';
 import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import MovieDetails from './MovieDetails';
 import Schedule from './Schedule';
+import OnScreen from './OnScreen';
 
 
 function App() {
@@ -18,7 +19,8 @@ function App() {
       <div className="containerMain_Nav">
         <Nav />
         <Switch>
-          <Route exact path="/movies" component={ MainContent }></Route>
+          <Route exact path="/" component={ MainContent }></Route>
+          <Route exact path="/movies" component={ OnScreen }></Route>
           <Route exact path="/movies/:title" component={ MovieDetails }></Route>
           <Route exact path="/schedule" component={ Schedule }></Route>
         </Switch>
