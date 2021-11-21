@@ -1,0 +1,2 @@
+export const SHOW_MOVIES = 'SHOW_MOVIES';
+export const SHOW_SCHEDULE = 'SHOW_SCHEDULE';
